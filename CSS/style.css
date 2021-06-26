@@ -19,6 +19,58 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.7; /* 1.7* bigger than the typical line height */
+  line-height: 1.7;
   color: #777;
+  padding: 30px;
+}
+
+/* Setting up the header */
+.header {
+  height: 95vh; /* The height should be 95% of the viewport height*/
+  background-image: linear-gradient(
+    to right bottom, 
+    #7ed56fa8,
+    #28b485bb),
+  url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top; /* Keep image at top of page */
+  position: relative;
+  /* Change the shape of the header */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute; /* The position is in relation to the parent element.  That is the header so we need to set that position to relative */
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* The above position is relative to the parent element, translate in relation to the element itself*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
