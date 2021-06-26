@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Nature Tour landing page",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denver-Meadows/Natours.git"
+  },
+  "author": "Denver Meadows",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Denver-Meadows/Natours/issues"
+  },
+  "homepage": "https://github.com/Denver-Meadows/Natours#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.3.1"
+  }
+}
