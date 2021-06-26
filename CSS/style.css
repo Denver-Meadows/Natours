@@ -6,3 +6,19 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* Using a universal selector to reset all components on the page for all browsers*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Change box model so that the borders and paddings are no longer added */
+}
+
+/* Setting the font on the body so it is inherited on the entire page. Font is always set in the body */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /* 1.7* bigger than the typical line height */
+  color: #777;
+}
