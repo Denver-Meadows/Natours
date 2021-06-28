@@ -69,7 +69,7 @@ body {
   font-weight: 400;
   letter-spacing: 35px;
 
-  animation: moveInLeft 2s;
+  animation: slideInFromLeft 2s;
 }
 
 .heading-primary-sub {
@@ -78,10 +78,12 @@ body {
   font-weight: 700;
   letter-spacing: 17.4px;
 
-  animation: moveInRight 2s;
+  animation: slideInFromRight 2s;
 }
 
-@keyframes moveInLeft {
+/* Animations */
+
+@keyframes slideInFromLeft {
   0% {
     opacity: 0;
     transform: translateX(-100px); /* Moves 100px on the x axis*/
@@ -97,7 +99,7 @@ body {
   }
 }
 
-@keyframes moveInRight {
+@keyframes slideInFromRight {
   0% {
     opacity: 0;
     transform: translateX(100px); /* Moves 100px on the x axis*/
