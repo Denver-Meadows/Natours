@@ -1,11 +1,18 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+
 /* Using a universal selector to reset all components on the page for all browsers, including before & after */
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-  /* Make box sizing inheritable.  It will inherit from the body (below) */ }
+  box-sizing: inherit; /* Make box sizing inheritable.  It will inherit from the body (below) */
+}
 
 /* 
   Create an easy way to change all of the measurements on our page with one simple setting.
@@ -16,7 +23,8 @@
   100% would be 16px.  We get the % for 10px which would be 62.5% (10px / 16px = .625)
 */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 /* Setting the font on the body so it is inherited on the entire page. Font is always set in the body */
 body {
@@ -24,90 +32,106 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
+
   /* With the box model, by default the padding and border is added to the total width/height.  Which would add to the total height/width.
     Using border-box, the height/width will be defined for the entire box.  Therefore when setting height/width, it reduces the content area to ensure of boxs don't change in size. */
-  box-sizing: border-box;
-  /* Change box model so that the borders and paddings are no longer added */ }
+  box-sizing: border-box; /* Change box model so that the borders and paddings are no longer added */
+}
 
 /* Setting up the header */
 .header {
-  height: 95vh;
-  /* The height should be 95% of the viewport height*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  height: 95vh; /* The height should be 95% of the viewport height*/
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+  url(../img/hero.jpg);
   background-size: cover;
-  background-position: top;
-  /* Keep the top of the image at top of page */
+  background-position: top; /* Keep the top of the image at top of page */
   position: relative;
   /* Change the shape of the header */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
 
 .header__logo-box {
-  position: absolute;
-  /* The position is relative to the parent element.  That is the header so we need to set that position to relative */
+  position: absolute; /* The position is relative to the parent element.  That is the header so we need to set that position to relative */
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  /* The above position is relative to the parent element, translate in relation to the element itself*/
-  text-align: center;
-  /* Centers all text */ }
+  transform: translate(-50%, -50%); /* The above position is relative to the parent element, translate in relation to the element itself*/
+  text-align: center;  /* Centers all text */
+}
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
-  backface-visibility: hidden;
-  /* Makes sure the animation doesn't shift afterwards (happens sometimes) */
-  margin-bottom: 6rem; }
+
+  backface-visibility: hidden; /* Makes sure the animation doesn't shift afterwards (happens sometimes) */
+  margin-bottom: 6rem;
+}
 
 .heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
-  animation: slideInFromLeft 2s; }
+
+  animation: slideInFromLeft 2s;
+}
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-  animation: slideInFromRight 2s; }
+
+  animation: slideInFromRight 2s;
+}
 
 /* Animations */
+
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem);
-    /* Moves 100px on the x axis*/ }
+    transform: translateX(-10rem); /* Moves 100px on the x axis*/
+  }
+
   80% {
-    transform: translateX(1rem);
-    /* Pushes it 20px to the left prior to coming back to default */ }
+    transform: translateX(1rem); /* Pushes it 20px to the left prior to coming back to default */
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0);
-    /* Takes it to default*/ } }
+    transform: translateX(0); /* Takes it to default*/
+  }
+}
 
 @keyframes slideInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
-    /* Moves 100px on the x axis*/ }
+    transform: translateX(10rem); /* Moves 100px on the x axis*/
+  }
+
   80% {
-    transform: translateX(-1rem);
-    /* Pushes it 20px to the left prior to coming back to default */ }
+    transform: translateX(-1rem); /* Pushes it 20px to the left prior to coming back to default */
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0);
-    /* Takes it to default*/ } }
+    transform: translateX(0); /* Takes it to default*/
+  }
+}
 
 /* Link suedo class, state of anchor element */
 .btn:link,
@@ -117,19 +141,22 @@ body {
   padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
-  transition: all .2s; }
+  transition: all .2s;
+}
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */ }
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */
+}
 
 /* Active state is when clicked */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /* less blur when clicked */ }
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2); /* less blur when clicked */
+}
 
 .btn--white {
-  background-color: #fff;
-  color: #777; }
+  background-color: $color-white;
+  color: $color-grey-dark;
+}
+
