@@ -7,21 +7,37 @@ Dark green: #28b485
 
 */
 
-/* Using a universal selector to reset all components on the page for all browsers*/
-* {
+/* Using a universal selector to reset all components on the page for all browsers, including before & after */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Change box model so that the borders and paddings are no longer added */
+  box-sizing: inherit; /* Make box sizing inheritable.  It will inherit from the body (below) */
+}
+
+/* 
+  Create an easy way to change all of the measurements on our page with one simple setting.
+  When we hit breakpoints, we can change one global setting, the global font size.
+  REM is in relation to the font-root size of 16px.
+  Set the font-size to 10px so that way we can easily calculate that 1rem is 10px.
+  However, it's a bad practice to use pixels.  Therefore, we convert to a percentage.
+  100% would be 16px.  We get the % for 10px which would be 62.5% (10px / 16px = .625)
+*/
+html {
+  font-size: 62.5%;
 }
 
 /* Setting the font on the body so it is inherited on the entire page. Font is always set in the body */
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+
+  box-sizing: border-box; /* Change box model so that the borders and paddings are no longer added */
 }
 
 /* Setting up the header */
@@ -41,12 +57,12 @@ body {
 
 .logo-box {
   position: absolute; /* The position is relative to the parent element.  That is the header so we need to set that position to relative */
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 .text-box {
@@ -62,23 +78,23 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden; /* Makes sure the animation doesn't shift afterwards (happens sometimes) */
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation: slideInFromLeft 2s;
 }
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   animation: slideInFromRight 2s;
 }
@@ -88,11 +104,11 @@ body {
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px); /* Moves 100px on the x axis*/
+    transform: translateX(-10rem); /* Moves 100px on the x axis*/
   }
 
   80% {
-    transform: translateX(20px); /* Pushes it 20px to the left prior to coming back to default */
+    transform: translateX(1rem); /* Pushes it 20px to the left prior to coming back to default */
   }
 
   100% {
@@ -104,11 +120,11 @@ body {
 @keyframes slideInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(100px); /* Moves 100px on the x axis*/
+    transform: translateX(10rem); /* Moves 100px on the x axis*/
   }
 
   80% {
-    transform: translateX(-20px); /* Pushes it 20px to the left prior to coming back to default */
+    transform: translateX(-1rem); /* Pushes it 20px to the left prior to coming back to default */
   }
 
   100% {
@@ -122,21 +138,21 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all .2s;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,.2); /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */
 }
 
 /* Active state is when clicked */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .2); /* less blur when clicked */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2); /* less blur when clicked */
 }
 
 .btn-white {
