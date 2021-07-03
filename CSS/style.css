@@ -42,24 +42,21 @@ body {
   position: relative;
   /* Change the shape of the header */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  /* The position is relative to the parent element.  That is the header so we need to set that position to relative */
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* The above position is relative to the parent element, translate in relation to the element itself*/
-  text-align: center;
-  /* Centers all text */ }
+  .header__logo-box {
+    position: absolute;
+    /* The position is relative to the parent element.  That is the header so we need to set that position to relative */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* The above position is relative to the parent element, translate in relation to the element itself*/
+    text-align: center;
+    /* Centers all text */ }
 
 .heading-primary {
   color: #fff;
@@ -67,20 +64,18 @@ body {
   backface-visibility: hidden;
   /* Makes sure the animation doesn't shift afterwards (happens sometimes) */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: slideInFromLeft 2s; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: slideInFromRight 2s; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: slideInFromLeft 2s; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: slideInFromRight 2s; }
 
 /* Animations */
 @keyframes slideInFromLeft {
@@ -110,26 +105,30 @@ body {
     /* Takes it to default*/ } }
 
 /* Link suedo class, state of anchor element */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */ }
-
-/* Active state is when clicked */
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /* less blur when clicked */ }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
+.btn {
+  /* Active state is when clicked */ }
+  .btn:link {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s; }
+  .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */ }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* less blur when clicked */ }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }

@@ -1,0 +1,36 @@
+/* Link suedo class, state of anchor element */
+.btn {
+  &:link {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+  }
+
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2); /* create shadow 0 on top, 10 on bottom with 20 blur. black color with 20% transparent */
+  }
+  
+  /* Active state is when clicked */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* less blur when clicked */
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+  }  
+}

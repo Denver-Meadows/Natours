@@ -1,0 +1,34 @@
+/* Using a universal selector to reset all components on the page for all browsers, including before & after */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* Make box sizing inheritable.  It will inherit from the body (below) */
+}
+
+/* 
+  Create an easy way to change all of the measurements on our page with one simple setting.
+  When we hit breakpoints, we can change one global setting, the global font size.
+  REM is in relation to the font-root size of 16px.
+  Set the font-size to 10px so that way we can easily calculate that 1rem is 10px.
+  However, it's a bad practice to use pixels.  Therefore, we convert to a percentage.
+  100% would be 16px.  We get the % for 10px which would be 62.5% (10px / 16px = .625)
+*/
+html {
+  font-size: 62.5%;
+}
+
+/* Setting the font on the body so it is inherited on the entire page. Font is always set in the body */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+
+  /* With the box model, by default the padding and border is added to the total width/height.  Which would add to the total height/width.
+    Using border-box, the height/width will be defined for the entire box.  Therefore when setting height/width, it reduces the content area to ensure of boxs don't change in size. */
+  box-sizing: border-box; /* Change box model so that the borders and paddings are no longer added */
+}
