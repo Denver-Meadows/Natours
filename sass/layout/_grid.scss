@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width;
-  background-color:lightgray;
   margin: 0 auto; /* will center a block element inside another block element */
 
   // not is used to tell css not to use the below code on the specified element that was passed in (last-child)
@@ -14,7 +13,6 @@
   // Since all "cols" will have the same bg, float and margin-right, we can select them all with the below code.
   // Select all class that start(^) with "col-"
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
