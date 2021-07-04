@@ -1,0 +1,41 @@
+.card {
+  // Change the look of the card during the flip.
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; // needed to keep perspective
+
+  &__side {
+    height: 50rem;
+    transition: all .9s ease;
+    // Fix position to stack cards
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; // Stop width from collapsing
+    backface-visibility: hidden; // Hide card side when flipped
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: green;
+      transform: rotateY(-180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
