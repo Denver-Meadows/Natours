@@ -1,14 +1,7 @@
 /* Link suedo class, state of anchor element */
 .btn {
-  &:link {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-  }
-
+  &, // selects all btns, including below link and visited
+  &:link,
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -16,6 +9,10 @@
     display: inline-block;
     border-radius: 10rem;
     transition: all .2s;
+
+    // Updated for booking section
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {

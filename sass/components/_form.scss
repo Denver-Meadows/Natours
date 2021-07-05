@@ -15,6 +15,7 @@
     border-bottom: 3px solid transparent; // Transparent until focused
     width: 90%;
     display: block;
+    transition: all .5s; // Bot-bor slowly changes color
 
     &:focus {
       outline: none;
@@ -47,5 +48,58 @@
     opacity: 0; // allows for animation
     visibility: hidden; // hide element
     transform: translateY(-4rem); // Element drops down in animation
+  }
+
+  &__radio-group {
+    display: inline-block;
+    width: 45%;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  // Hiding default radio btns for below custom
+  &__radio-input {
+    display: none;
+  }
+
+  // Custom radio buttons
+  &__radio-button {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+
+    // Using after suedo element for the inside green btn element
+    &::after {
+      content: ""; // must be set for suedo class
+      display: block;
+      background-color: $color-primary;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      // Center in the above circle
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .3s;
+    }
+  }
+
+  // Selecting all radio btns that are checked to allow custom btns to work
+  // Once checked, select sibling child (span/custom btn)
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
   }
 }
