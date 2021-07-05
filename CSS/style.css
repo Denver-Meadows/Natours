@@ -118,6 +118,19 @@ body {
     transform: translateX(0);
     /* Takes it to default*/ } }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .25; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 /* Link suedo class, state of anchor element */
 .btn {
   /* Active state is when clicked */ }
@@ -315,7 +328,8 @@ body {
   padding: 6rem;
   padding-left: 9rem;
   font-size: 1.6rem;
-  transform: skewX(-12deg); }
+  transform: skewX(-12deg);
+  background-color: rgba(255, 255, 255, 0.5); }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -328,7 +342,7 @@ body {
     position: relative; }
   .story__img {
     height: 100%;
-    transform: translateX(-3rem) scale(1.4); }
+    transform: translateX(-3rem) scale(1.3); }
   .story__text {
     transform: skewX(12deg); }
   .story__caption {
@@ -341,12 +355,13 @@ body {
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
-    transition: all .2s; }
+    transition: all .4s; }
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
   .story:hover .story__img {
-    transform: translateX(-3rem) scale(1); }
+    transform: translateX(-3rem) scale(1);
+    filter: blur(3px) brightness(80%); }
 
 .row {
   max-width: 114rem;
@@ -423,4 +438,18 @@ body {
 
 .section-stories {
   padding: 15rem 0;
-  background-color: #f7f7f7; }
+  position: relative; }
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9), 0%, rgba(255, 255, 255, 0.9), 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  height: 50rem; }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }
