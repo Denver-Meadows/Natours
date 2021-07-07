@@ -16,6 +16,25 @@
 </head>
 <body>
 
+  <div class="navigation">
+    <!-- checkbox hack for nav -->
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+      <div class="navigation__icon">&nbsp;</div>
+    </label>
+    <div class="navigation__background">&nbsp;</div> <!-- empty div for bg-color-->
+
+    <nav class="navigation__nav">
+      <ul class="navigation__list">
+        <li class="navigation__item"><a href="#" class="navigation__link">About Natours</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Your Benefits</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Popular Tours</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Book Now</a></li>
+      </ul>
+    </nav>
+  </div>
+
   <header class="header">
    <div class="header__logo-box">
      <img src="img/logo-white.png" alt="Natours logo" class="header__logo">
@@ -332,7 +351,7 @@
     </div>
   </footer>
 
-  <!-- Built a grid so we can use sections as needed 
+  <!-- Grid parts
   <section class="grid-test">
     <div class="row">
       <div class="col-1-of-2">Col 1 of 2</div>
