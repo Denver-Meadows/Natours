@@ -16,7 +16,25 @@
   100% would be 16px.  We get the % for 10px which would be 62.5% (10px / 16px = .625)
 */
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px
+
+  // media queries.  Larger before smaller with desktop-first
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1 rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) {
+    font-size: 43.75%; // 1 rem = 7px
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1 rem = 12px
+  }
+
 }
 
 /* Setting the font on the body so it is inherited on the entire page. Font is always set in the body */
