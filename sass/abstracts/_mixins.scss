@@ -21,13 +21,16 @@
 1200 - 1800px:    Normal styles based on desktop first approach
 1800px +:         Big desktop
 
-1em = 16px
-
 $breakpoint arguments
 - phone
 - tab-port
 - tab-land
 - big-desktop
+
+Order:  Base + typography > general layout > grid > page layout > components 
+
+1em = 16px
+
 */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {

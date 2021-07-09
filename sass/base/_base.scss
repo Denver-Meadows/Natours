@@ -26,11 +26,7 @@ html {
   @include respond(tab-port) {
     font-size: 50%; // 1 rem = 8px, 8/16 = 50%
   }
-
-  @include respond(phone) {
-    font-size: 43.75%; // 1 rem = 7px
-  }
-
+  
   @include respond(big-desktop) {
     font-size: 75%; // 1 rem = 12px
   }
@@ -39,14 +35,12 @@ html {
 
 /* Setting the font on the body so it is inherited on the entire page. Font is always set in the body */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: $color-grey-dark;
-  padding: 3rem;
-
   /* With the box model, by default the padding and border is added to the total width/height.  Which would add to the total height/width.
     Using border-box, the height/width will be defined for the entire box.  Therefore when setting height/width, it reduces the content area to ensure of boxs don't change in size. */
   box-sizing: border-box; /* Change box model so that the borders and paddings are no longer added */
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0
+  }
 }

@@ -17,6 +17,16 @@
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba($color-black, .4);
     text-align: center; // For nav icon
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -31,6 +41,17 @@
 
     z-index: 1000; // Ensure it doesn't get hidden
     transition: all .8s;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+
   }
 
   &__nav {
@@ -44,6 +65,10 @@
     opacity: 0;
     width: 0;
     transition: all .9s;
+
+    @include respond(phone) {
+      transition: all .3s
+    }
   }
 
   &__list {
