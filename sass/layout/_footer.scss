@@ -68,13 +68,13 @@
   &__copyright {
     border-top: 1px solid $color-grey-light-1;
     padding-top: 2rem;
-    display: inline-block; // makes length occupy the length of the contenct
+    display: inline-block; // makes length occupy the length of the content
     float: right;
 
     @include respond(tab-port) {
       width: 100%;
       float: none;
-      padding-left: 5rem;
+      padding-left: 6rem;
     }
   }
 }
