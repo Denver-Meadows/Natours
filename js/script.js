@@ -1,0 +1,1 @@
+// Make the nav bar work when clicked
