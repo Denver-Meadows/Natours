@@ -234,7 +234,7 @@ body {
   height: 52rem; }
   .card__side {
     height: 52rem;
-    transition: all .9s ease;
+    transition: all .8s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -738,7 +738,7 @@ body {
   margin-top: -20vh; }
   @media (max-width: 56.25em) {
     .section-about {
-      padding: 20rem 0; } }
+      padding: 20rem 5rem; } }
 
 .section-features {
   padding: 20rem 0;
@@ -751,6 +751,9 @@ body {
   @media (max-width: 56.25em) {
     .section-features {
       padding: 10rem 0; } }
+  @media (max-width: 37.5em) {
+    .section-features {
+      padding: 10rem 5rem; } }
 
 .section-tours {
   background-color: #f7f7f7;
