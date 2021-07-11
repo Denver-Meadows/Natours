@@ -53,10 +53,6 @@
   @include respond(tab-port) {
     padding-left: 10rem 0;
   }
-
-  @include respond(phone) {
-    padding-left: 0 0;
-  }
 }
 
 .section-booking {
@@ -75,10 +71,32 @@
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, .3);
 
-  height: 50rem;
+  @include respond(tab-land) {
+    background-image: linear-gradient(105deg, 
+    rgba($color-white, .9), 0%,
+    rgba($color-white, .9), 65%, 
+    transparent 65%), 
+     url(../img/nat-10.jpg);
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(360deg, 
+    rgba($color-white, .9), 0%,
+    rgba($color-white, .9), 90%, 
+    transparent 100%), 
+     url(../img/nat-10.jpg);
+  }
 
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 }

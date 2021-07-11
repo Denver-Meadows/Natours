@@ -464,6 +464,10 @@ body {
 .form__radio-group {
   display: inline-block;
   width: 45%; }
+  @media (max-width: 37.5em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-label {
   font-size: 1.6rem;
@@ -812,9 +816,6 @@ body {
   @media (max-width: 56.25em) {
     .section-stories {
       padding-left: 10rem 0; } }
-  @media (max-width: 37.5em) {
-    .section-stories {
-      padding-left: 0 0; } }
 
 .section-booking {
   padding: 15rem 0;
@@ -824,8 +825,19 @@ body {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9), 0%, rgba(255, 255, 255, 0.9), 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
-  height: 50rem; }
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9), 0%, rgba(255, 255, 255, 0.9), 65%, transparent 65%), url(../img/nat-10.jpg); } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(360deg, rgba(255, 255, 255, 0.9), 0%, rgba(255, 255, 255, 0.9), 90%, transparent 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%; } }
