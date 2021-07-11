@@ -147,6 +147,7 @@
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
+    color: $color-white;
   }
 
   &__price-box {
@@ -163,5 +164,62 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+
+
+  @include  respond(tab-port) {
+    height: auto; 
+  
+    &__side {
+      height: auto;
+      position: relative;
+      border-radius: 3px;
+
+      &--back {
+        transform: rotateY(0);
+      }
+    }
+  
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+  
+    // Back-side styling
+    &__cta {
+      // Center content with absolute posistioning
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      text-align: center;
+      padding: 3rem;
+      margin-top: 3rem;
+    }
+
+    &__side--front {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+      z-index: 100;
+    }
+
+    &__side--back {
+      margin-top: -5vh;
+    }
+
+    &__details {
+      padding-bottom: 5rem;
+    }
+  
+    &__price-box {
+      text-align: center;
+      color: $color-white;
+      margin-bottom: 3.5rem;
+    }
+  
+    &__price-value {
+      font-size: 4rem;
+    }
   }
 }
