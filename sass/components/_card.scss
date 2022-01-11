@@ -7,16 +7,20 @@
 
   &__side {
     height: 52rem;
-    transition: all .8s ease;
+    transition: all 0.8s ease;
+    -moz-tranisition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
     // Fix position to stack cards
     position: absolute;
     top: 0;
     left: 0;
     width: 100%; // Stop width from collapsing
     backface-visibility: hidden; // Hide card side when flipped
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden; // Stop image from overflowing and hiding rounded corners
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &--front {
       background-color: $color-white;
@@ -25,32 +29,46 @@
     &--back {
       background-color: green;
       transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+      -webkit-transform: rotateY(-180deg);
 
       &-1 {
-        background-image: linear-gradient(to right bottom, 
-        $color-secondary-light, $color-secondary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
       }
 
       &-2 {
-        background-image: linear-gradient(to right bottom, 
-        $color-primary-light, $color-primary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
       }
 
       &-3 {
-        background-image: linear-gradient(to right bottom, 
-        $color-tertiary-light, $color-tertiary-dark);
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
       }
     }
   }
 
   &:hover &__side--front {
     transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -webkit-transform: rotateY(0);
   }
-
 
   // Front side styling
   &__picture {
@@ -61,21 +79,30 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
     &--1 {
-      background-image: linear-gradient(to right bottom, 
-      $color-secondary-light, $color-secondary-dark), 
-      url(../img/nat-5.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
     }
 
     &--2 {
-      background-image: linear-gradient(to right bottom, 
-      $color-primary-light, $color-primary-dark), 
-      url(../img/nat-6.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpg);
     }
 
     &--3 {
-      background-image: linear-gradient(to right bottom, 
-      $color-tertiary-light, $color-tertiary-dark), 
-      url(../img/nat-7.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
     }
   }
 
@@ -99,21 +126,27 @@
     box-decoration-break: clone;
 
     &--1 {
-      background-image: linear-gradient(to right bottom, 
-      rgba($color-secondary-light, .85), 
-      rgba($color-secondary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
     }
 
     &--2 {
-      background-image: linear-gradient(to right bottom, 
-      rgba($color-primary-light, .85), 
-      rgba($color-primary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
     }
 
     &--3 {
-      background-image: linear-gradient(to right bottom, 
-      rgba($color-tertiary-light, .85), 
-      rgba($color-tertiary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
     }
   }
 
@@ -136,7 +169,6 @@
       }
     }
   }
-
 
   // Back-side styling
   &__cta {
@@ -166,11 +198,9 @@
     font-weight: 100;
   }
 
+  @include respond(tab-land) {
+    height: auto;
 
-
-  @include  respond(tab-land) {
-    height: auto; 
-  
     &__side {
       height: auto;
       position: relative;
@@ -180,11 +210,11 @@
         transform: rotateY(0);
       }
     }
-  
+
     &:hover &__side--front {
       transform: rotateY(0);
     }
-  
+
     // Back-side styling
     &__cta {
       // Center content with absolute posistioning
@@ -211,13 +241,13 @@
     &__details {
       padding-bottom: 5rem;
     }
-  
+
     &__price-box {
       text-align: center;
       color: $color-white;
       margin-bottom: 3.5rem;
     }
-  
+
     &__price-value {
       font-size: 4rem;
     }
